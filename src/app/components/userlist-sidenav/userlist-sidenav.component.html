@@ -1,11 +1,15 @@
-<div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="2em" class="user-list">
-  <div class="sidenav-button">
+<div fxLayout="column" fxLayoutAlign="end center" class="user-list">
+
+  <div fxFlex fxLayout="column" fxLayoutGap="2em" fxLayoutAlign="center center">
+    <app-user-avatar avatarSize="40px"></app-user-avatar>
+    <app-user-avatar avatarSize="40px"></app-user-avatar>
+    <app-user-avatar avatarSize="40px"></app-user-avatar>
+    <app-user-avatar avatarSize="40px"></app-user-avatar>
+  </div>
+
+  <div fxFlex="2" (click)="toggleSideNav()" class="sidenav-button">
     <span class="material-icons">
-      chevron_left
+      {{ sideNavBoolState ? 'chevron_right':'chevron_left' }}
     </span>
   </div>
-  <app-user-avatar avatarSize="40px"></app-user-avatar>
-  <app-user-avatar avatarSize="40px"></app-user-avatar>
-  <app-user-avatar avatarSize="40px"></app-user-avatar>
-  <app-user-avatar avatarSize="40px"></app-user-avatar>
 </div>
