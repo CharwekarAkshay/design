@@ -2,13 +2,24 @@
   padding: 2em 0;
   height: 100%;
   position: relative;
-  background-color: #efefef;
+  background-color: #FEFEFE;
   .sidenav-button {
     cursor: pointer;
-    background-color: #efefef;
+    background-color: #FEFEFE;
     display: flex;
     justify-content: center;
     align-content: center;
     flex-direction: column;
+  }
+  .add-user {
+    height: 40px;
+    width: 40px;
+    background-color: #A83238;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #FEFEFE;
   }
 }
