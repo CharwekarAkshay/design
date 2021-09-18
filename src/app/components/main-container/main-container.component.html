@@ -1,5 +1,7 @@
 <div fxLayout="row" class="container">
-  <div fxFlex="15">A</div>
+  <div fxFlex="15">
+    <app-sidenav></app-sidenav>
+  </div>
   <div fxFlex>B</div>
   <div [fxFlex]="modalState ? 15 : 5" class="right-sidenav">
     <app-userlist-sidenav (sideNavState)="toggleSideNav($event)"></app-userlist-sidenav>

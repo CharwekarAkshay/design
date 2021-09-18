@@ -12,9 +12,11 @@
     <app-user-avatar avatarSize="40px"></app-user-avatar>
   </div>
 
-  <div fxFlex="2" (click)="toggleSideNav()" class="sidenav-button">
-    <span class="material-icons">
-      {{ sideNavBoolState ? 'chevron_right':'chevron_left' }}
-    </span>
+  <div>
+    <div class="add-user" (click)="toggleSideNav()">
+      <span class="material-icons">
+        {{ sideNavBoolState ? 'chevron_right':'chevron_left' }}
+      </span>
+    </div>
   </div>
 </div>
