@@ -8,6 +8,7 @@ import { MainContainerComponent } from './components/main-container/main-contain
 import { UserlistSidenavComponent } from './components/userlist-sidenav/userlist-sidenav.component';
 import { UserAvatarComponent } from './components/design/user-avatar/user-avatar.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
+import { SidenavMenuButtonComponent } from './components/design/sidenav-menu-button/sidenav-menu-button.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { SidenavComponent } from './components/sidenav/sidenav.component';
     UserlistSidenavComponent,
     UserAvatarComponent,
     SidenavComponent,
+    SidenavMenuButtonComponent,
   ],
   imports: [
     BrowserModule,
