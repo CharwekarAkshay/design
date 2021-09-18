@@ -9,8 +9,10 @@
       </g>
     </svg>
   </div>
-  <app-sidenav-menu-button></app-sidenav-menu-button>
-  <app-sidenav-menu-button></app-sidenav-menu-button>
-  <app-sidenav-menu-button></app-sidenav-menu-button>
-  <app-sidenav-menu-button></app-sidenav-menu-button>
+  <div fxFlex="2em"></div>
+  <div fxLayout="column" fxLayoutGap="2em">
+    <ng-container *ngFor="let sideNavSection of sideNavSectionList">
+      <app-sidenav-menu-section [sideNavSection]='sideNavSection'></app-sidenav-menu-section>
+    </ng-container>
+  </div>
 </div>

@@ -1,0 +1,11 @@
+<div fxLayout="column" fxLayoutGap="2em" class="sidenav-section">
+  <div fxLayout="row">
+    <div fxFlex="5"></div>
+    <p>{{sideNavSection!.sectionName}}</p>
+  </div>
+  <div fxLayout="column" fxLayoutGap="1em">
+    <ng-container *ngFor="let sidenavButton of sideNavSection.sectionButtonList">
+      <app-sidenav-menu-button [sideNavButton]='sidenavButton'></app-sidenav-menu-button>
+    </ng-container>
+  </div>
+</div>

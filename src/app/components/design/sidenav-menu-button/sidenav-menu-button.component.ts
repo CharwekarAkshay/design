@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { SideNavButton } from 'src/app/models/sidenav-button';
 
 @Component({
   selector: 'app-sidenav-menu-button',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sidenav-menu-button.component.scss']
 })
 export class SidenavMenuButtonComponent implements OnInit {
+
+  @Input() sideNavButton!: SideNavButton;
 
   constructor() { }
 
