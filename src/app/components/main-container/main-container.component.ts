@@ -14,7 +14,7 @@ export class MainContainerComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  toggleSideNav():void {
-    this.modalState = !this.modalState;
+  toggleSideNav(state: boolean): void {
+    this.modalState = state;
   }
 }

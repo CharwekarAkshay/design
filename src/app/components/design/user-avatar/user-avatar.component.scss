@@ -1,0 +1,20 @@
+.image-holder {
+  position: relative;
+  img {
+    border-radius: 50%;
+  }
+  .online-status {
+    position: absolute;
+    border-radius: 50%;
+    background-color: white;
+    right: 0;
+    top:0;
+    div {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+    }
+  }
+}

@@ -13,3 +13,7 @@
 .container{
   height: 100%;
 }
+
+.right-sidenav {
+  transition: max-width 1s ease-in-out;
+}
