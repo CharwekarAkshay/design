@@ -1,7 +1,7 @@
 <div>
   <div class="image-holder">
     <img [src]="getImageUrl()" alt="User profile" [ngStyle]="{ 'height': getAvatarSize(), 'width': getAvatarSize()  }">
-    <div class="online-status" [ngStyle]="{'height': getStatusHolderSize(), 'width': getStatusHolderSize()}">
+    <div *ngIf="isUserStatusEnabled" class="online-status" [ngStyle]="{'height': getStatusHolderSize(), 'width': getStatusHolderSize()}">
       <div [ngStyle]="{ 'background-color': getStatusColor(), 'height': getStatusSize(), 'width': getStatusSize()}">
       </div>
     </div>

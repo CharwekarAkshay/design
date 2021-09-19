@@ -1,0 +1,21 @@
+<div fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="1em">
+  <div>
+    <span class="material-icons">
+      notifications
+    </span>
+  </div>
+  <div>
+    <span class="material-icons">
+      chat_bubble_outline
+    </span>
+  </div>
+  <div fxLayout="row" class="user-info" fxLayoutGap="5px">
+    <div class="user-avatar-holder">
+      <app-user-avatar avatarSize="30px" [isUserStatusEnabled]="false"></app-user-avatar>
+    </div>
+    <div fxLayout="column" fxLayoutAlign="space-between start">
+      <p>Akshay Charwekar</p>
+      <p>Level 100</p>
+    </div>
+  </div>
+</div>

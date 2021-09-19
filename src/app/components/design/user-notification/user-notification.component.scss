@@ -1,0 +1,34 @@
+.user-info {
+  font-size: 0.75em;
+  color: grey;
+
+  .user-avatar-holder {
+    position: relative;
+  }
+
+  .user-avatar-holder::after {
+    position: absolute;
+    content: "";
+    height: 40px;
+    width: 40px;
+    background-color: #e6452f;
+    border-radius: 50%;
+    z-index: -2;
+    top: -20%;
+    left: -20%;
+  }
+
+  .user-avatar-holder::before {
+    position: absolute;
+    content: "";
+    height: 40px;
+    width: 40px;
+    background-color: white;
+    border-radius: 50%;
+    z-index: -1;
+    top: 45%;
+    left: 45%;
+    transform: translate(-40%, -50%);
+    z-index: -1;
+  }
+}

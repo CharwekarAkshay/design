@@ -14,6 +14,7 @@ import { BrowseComponent } from './components/core/browse/browse.component';
 import { WatchlistComponent } from './components/core/watchlist/watchlist.component';
 import { SettingsComponent } from './components/core/settings/settings.component';
 import { SearchComponent } from './components/design/search/search.component';
+import { UserNotificationComponent } from './components/design/user-notification/user-notification.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { SearchComponent } from './components/design/search/search.component';
     WatchlistComponent,
     SettingsComponent,
     SearchComponent,
+    UserNotificationComponent,
   ],
   imports: [
     BrowserModule,
