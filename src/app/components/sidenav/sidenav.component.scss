@@ -1,10 +1,19 @@
-.application-sidenav{
+.application-sidenav {
   padding: 2em 0;
-  .netflix_icon{
+  .netflix_icon {
     padding: 1em;
-    svg{
+    svg {
       // fill:#E6452F;
     }
   }
 
+  .add-box-holder {
+    background-color: rebeccapurple;
+    height: 100px;
+    width: 100%;
+  }
+
+  .sidenav-menu {
+    height: 100%;
+  }
 }
