@@ -15,6 +15,7 @@ import { WatchlistComponent } from './components/core/watchlist/watchlist.compon
 import { SettingsComponent } from './components/core/settings/settings.component';
 import { SearchComponent } from './components/design/search/search.component';
 import { UserNotificationComponent } from './components/design/user-notification/user-notification.component';
+import { MovieBannerComponent } from './components/design/movie-banner/movie-banner.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { UserNotificationComponent } from './components/design/user-notification
     SettingsComponent,
     SearchComponent,
     UserNotificationComponent,
+    MovieBannerComponent,
   ],
   imports: [
     BrowserModule,

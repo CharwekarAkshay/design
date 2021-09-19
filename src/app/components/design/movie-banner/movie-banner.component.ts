@@ -1,0 +1,15 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-movie-banner',
+  templateUrl: './movie-banner.component.html',
+  styleUrls: ['./movie-banner.component.scss']
+})
+export class MovieBannerComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+}
