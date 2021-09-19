@@ -5,15 +5,18 @@
       "sectionButtonList": [
         {
           "iconName": "explore",
-          "buttonText": "Browse"
+          "buttonText": "Browse",
+          "routerLink": "browse"
         },
         {
           "iconName": "favorite_border",
-          "buttonText": "Watchlist"
+          "buttonText": "Watchlist",
+          "routerLink": "watchlist"
         },
         {
           "iconName": "shopping_basket",
-          "buttonText": "Comming soon"
+          "buttonText": "Comming soon",
+          "routerLink": "watchlist"
         }
       ]
     },
@@ -22,11 +25,13 @@
       "sectionButtonList": [
         {
           "iconName": "person",
-          "buttonText": "Friends"
+          "buttonText": "Friends",
+          "routerLink": "watchlist"
         },
         {
           "iconName": "group",
-          "buttonText": "Parties"
+          "buttonText": "Parties",
+          "routerLink": "watchlist"
         }
       ]
     },
@@ -35,11 +40,13 @@
       "sectionButtonList": [
         {
           "iconName": "settings",
-          "buttonText": "Settings"
+          "buttonText": "Settings",
+          "routerLink": "settings"
         },
         {
           "iconName": "logout",
-          "buttonText": "Logout"
+          "buttonText": "Logout",
+          "routerLink": "watchlist"
         }
       ]
     }

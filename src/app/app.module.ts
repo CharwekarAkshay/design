@@ -10,6 +10,9 @@ import { UserAvatarComponent } from './components/design/user-avatar/user-avatar
 import { MainContainerComponent } from './components/main-container/main-container.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { UserlistSidenavComponent } from './components/userlist-sidenav/userlist-sidenav.component';
+import { BrowseComponent } from './components/core/browse/browse.component';
+import { WatchlistComponent } from './components/core/watchlist/watchlist.component';
+import { SettingsComponent } from './components/core/settings/settings.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +23,9 @@ import { UserlistSidenavComponent } from './components/userlist-sidenav/userlist
     SidenavComponent,
     SidenavMenuButtonComponent,
     SidenavMenuSectionComponent,
+    BrowseComponent,
+    WatchlistComponent,
+    SettingsComponent,
   ],
   imports: [
     BrowserModule,
