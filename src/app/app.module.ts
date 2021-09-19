@@ -13,6 +13,7 @@ import { UserlistSidenavComponent } from './components/userlist-sidenav/userlist
 import { BrowseComponent } from './components/core/browse/browse.component';
 import { WatchlistComponent } from './components/core/watchlist/watchlist.component';
 import { SettingsComponent } from './components/core/settings/settings.component';
+import { SearchComponent } from './components/design/search/search.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { SettingsComponent } from './components/core/settings/settings.component
     BrowseComponent,
     WatchlistComponent,
     SettingsComponent,
+    SearchComponent,
   ],
   imports: [
     BrowserModule,
