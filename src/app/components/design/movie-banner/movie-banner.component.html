@@ -4,16 +4,20 @@
     <div fxLayout="row" fxLayoutAlign="space-between center">
       <div fxLayout="column">
         <p class="movie-title">{{ getSelectedMovie() == undefined ? '' : getSelectedMovie()!.title }}</p>
-        <p>{{ getSelectedMovie() == undefined ? '' : getSelectedMovie()!.imdb.rating }}</p>
+        <p class="rating">{{ getSelectedMovie() == undefined ? '' : getSelectedMovie()!.imdb.rating }} IMDB Rating</p>
       </div>
     </div>
 
 
     <!--  Carsooul controller Row -->
     <div fxLayout="row" fxLayoutAlign="space-between center">
-      <div class="movie-control">
-        <button>watch</button>
-        <button>+</button>
+      <div class="movie-control" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="center center">
+        <span class="watch-button">Watch</span>
+        <span class="add-to-favorite">
+          <span class="material-icons">
+            add
+          </span>
+        </span>
       </div>
       <div class="carsoul-controller">
         <div fxLayout="row" fxLayoutGap="10px">
