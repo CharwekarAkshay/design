@@ -26,6 +26,7 @@
   .rating {
     font-size: 1.5em;
     color: white;
+    font-weight: bold;
   }
 
   .watch-button {
@@ -34,6 +35,7 @@
     background-color: #e50914;
     border-radius: 20px;
     color: white;
+    font-size: 1em;
   }
 
   .add-to-favorite {
@@ -41,6 +43,9 @@
     background-color: #303030;
     border-radius: 20px;
     padding: 10px 20px;
-
+    cursor: pointer;
+    .material-icons {
+      font-size: 1em;
+    }
   }
 }

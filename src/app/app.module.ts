@@ -16,6 +16,7 @@ import { SettingsComponent } from './components/core/settings/settings.component
 import { SearchComponent } from './components/design/search/search.component';
 import { UserNotificationComponent } from './components/design/user-notification/user-notification.component';
 import { MovieBannerComponent } from './components/design/movie-banner/movie-banner.component';
+import { DataChipComponent } from './components/design/data-chip/data-chip.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { MovieBannerComponent } from './components/design/movie-banner/movie-ban
     SearchComponent,
     UserNotificationComponent,
     MovieBannerComponent,
+    DataChipComponent,
   ],
   imports: [
     BrowserModule,

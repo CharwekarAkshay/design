@@ -1,6 +1,13 @@
 <div fxLayout="column" fxLayoutAlign="center center">
-  <div class="movies-banner" [ngStyle]="{'background-image': getMovieUrl()}">
-
+  <div fxLayout="column" class="movies-banner"
+    [ngStyle]="{'background-image': getMovieUrl()}">
+    <div fxFlex>
+      <div fxLayout="row" fxLayoutGap="0.5em">
+        <ng-container *ngFor="let language of getSelectedMovie().languages">
+          <app-data-chip [data]='language'></app-data-chip>
+        </ng-container>
+      </div>
+    </div>
     <div fxLayout="row" fxLayoutAlign="space-between center">
       <div fxLayout="column">
         <p class="movie-title">{{ getSelectedMovie() == undefined ? '' : getSelectedMovie()!.title }}</p>
@@ -29,6 +36,5 @@
         </div>
       </div>
     </div>
-    <div class="background"></div>
   </div>
 </div>
