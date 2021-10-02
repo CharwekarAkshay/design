@@ -49,3 +49,30 @@
     }
   }
 }
+
+
+@keyframes titleAnimation {
+
+  0% {
+    opacity: 0;
+    left: -10%;
+  }
+
+  100% {
+    opacity: 1;
+    left: 0;
+  }
+
+}
+
+@keyframes ratingAnimation {
+  0% {
+    opacity: 0;
+    right: -10%;
+  }
+
+  100% {
+    opacity: 1;
+    right: 0;
+  } 
+}
