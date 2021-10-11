@@ -8,10 +8,12 @@ import { Movie } from '../models/movie';
 })
 export class MoviesService {
 
+  private MOVIES_ENDPOINT = "api/movie"
+
   constructor(private httpClient: HttpClient) { }
 
 
-  getTopMovies(): Observable<Array<Movie>> {
-    return this.httpClient.get<Array<Movie>>("./../../assets/mocks/topMoviesList.json");
+  getTrendingMovies(): Observable<any> {
+    return this.httpClient.get<any>(this.MOVIES_ENDPOINT + '/trending');
   }
 }

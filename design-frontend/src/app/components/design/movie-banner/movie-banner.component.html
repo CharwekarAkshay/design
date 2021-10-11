@@ -1,38 +1,39 @@
 <div fxLayout="column" fxLayoutAlign="center center">
-  <div fxLayout="column" class="movies-banner"
-    [ngStyle]="{'background-image': getMovieUrl()}">
-    <div fxFlex>
-      <div fxLayout="row" fxLayoutGap="0.5em">
-        <ng-container *ngFor="let language of getSelectedMovie().languages">
-          <app-data-chip [data]='language'></app-data-chip>
-        </ng-container>
-      </div>
-    </div>
-    <div fxLayout="row" fxLayoutAlign="space-between center">
-      <div fxLayout="column">
-        <p class="movie-title">{{ getSelectedMovie() == undefined ? '' : getSelectedMovie()!.title }}</p>
-        <p class="rating">{{ getSelectedMovie() == undefined ? '' : getSelectedMovie()!.imdb.rating }} IMDB Rating</p>
-      </div>
-    </div>
-
-
-    <!--  Carsooul controller Row -->
-    <div fxLayout="row" fxLayoutAlign="space-between center">
-      <div class="movie-control" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="center center">
-        <span class="watch-button">Watch</span>
-        <span class="add-to-favorite">
-          <span class="material-icons">
-            add
-          </span>
-        </span>
-      </div>
-      <div class="carsoul-controller">
-        <div fxLayout="row" fxLayoutGap="10px">
-          <ng-container *ngFor="let movies of topMovieList; index as ind">
-            <div class="carsoul-image" (click)="bannerClickHandler(ind)">
-              <img [src]="movies.poster" [alt]="movies.title" />
-            </div>
+  <div *ngIf="movieList.length > 0">
+    <div fxLayout="column" class="movies-banner" [ngStyle]="{'background-image': getMovieUrl()}">
+      <div fxFlex>
+        <div fxLayout="row" fxLayoutGap="0.5em">
+          <ng-container *ngFor="let language of getSelectedMovie().languages">
+            <app-data-chip [data]='language'></app-data-chip>
           </ng-container>
+        </div>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="space-between center">
+        <div fxLayout="column">
+          <p class="movie-title">{{ getSelectedMovie() == undefined ? '' : getSelectedMovie()!.title }}</p>
+          <p class="rating">{{ getSelectedMovie() == undefined ? '' : getSelectedMovie()!.imdb.rating }} IMDB Rating</p>
+        </div>
+      </div>
+
+
+      <!--  Carsooul controller Row -->
+      <div fxLayout="row" fxLayoutAlign="space-between center">
+        <div class="movie-control" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="center center">
+          <span class="watch-button">Watch</span>
+          <span class="add-to-favorite">
+            <span class="material-icons">
+              add
+            </span>
+          </span>
+        </div>
+        <div class="carsoul-controller">
+          <div fxLayout="row" fxLayoutGap="10px">
+            <ng-container *ngFor="let movies of movieList; index as ind">
+              <div class="carsoul-image" (click)="bannerClickHandler(ind)">
+                <img [src]="movies.poster" [alt]="movies.title" />
+              </div>
+            </ng-container>
+          </div>
         </div>
       </div>
     </div>
