@@ -24,8 +24,15 @@ public class MovieService {
     }
 
     public Page<Movie> getTopThreeMovie() {
-        Sort sorting = Sort.by(Sort.Direction.DESC, "released").and(Sort.by(Sort.Direction.DESC, "rating"));
+        Sort sorting = Sort.by(Sort.Direction.DESC, "released").and(Sort.by(Sort.Direction.DESC, "imdb.rating"));
         PageRequest pageRequest = PageRequest.of(0, 3, sorting);
+        return movieRepository.findAll(pageRequest);
+    }
+
+   // Fetch movies with the highest rating
+    public Page<Movie> getPopularMovie() {
+        Sort sort = Sort.by(Sort.Direction.DESC, "imdb.rating");
+        PageRequest pageRequest = PageRequest.of(0, 10, sort);
         return movieRepository.findAll(pageRequest);
     }
 }

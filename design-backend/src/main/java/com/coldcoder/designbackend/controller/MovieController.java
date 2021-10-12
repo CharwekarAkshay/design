@@ -22,4 +22,9 @@ public class MovieController {
     public Movie addNewMovie(@RequestBody Movie movie) {
         return movieService.addNewMovie(movie);
     }
+
+    @GetMapping(value = "popular")
+    public Page<Movie> getPopularMovies() {
+        return movieService.getPopularMovie();
+    }
 }
