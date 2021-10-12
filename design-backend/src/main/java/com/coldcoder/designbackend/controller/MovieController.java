@@ -23,8 +23,9 @@ public class MovieController {
         return movieService.addNewMovie(movie);
     }
 
-    @GetMapping(value = "popular")
-    public Page<Movie> getPopularMovies() {
-        return movieService.getPopularMovie();
+    @GetMapping(value = "popular", params = {"page", "size"})
+    public Page<Movie> getPopularMovies(@RequestParam(value = "page", required = false) Integer page,
+                                        @RequestParam(value = "size", required = false) Integer size) {
+        return movieService.getPopularMovie(page, size);
     }
 }
