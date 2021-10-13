@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Movie } from '../models/movie';
@@ -15,5 +15,10 @@ export class MoviesService {
 
   getTrendingMovies(): Observable<any> {
     return this.httpClient.get<any>(this.MOVIES_ENDPOINT + '/trending');
+  }
+
+
+  getPopularMovies(requestParams: any): Observable<any> {
+    return this.httpClient.get<any>(this.MOVIES_ENDPOINT + '/popular', { params: requestParams });
   }
 }

@@ -2,7 +2,7 @@
   <div fxFlex="15">
     <app-sidenav></app-sidenav>
   </div>
-  <div fxFlex>
+  <div [fxFlex]="modalState ? 70 : 80">
     <router-outlet></router-outlet>
   </div>
   <div [fxFlex]="modalState ? 15 : 5" class="right-sidenav">

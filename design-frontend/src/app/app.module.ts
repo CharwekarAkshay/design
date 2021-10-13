@@ -17,6 +17,8 @@ import { SearchComponent } from './components/design/search/search.component';
 import { UserNotificationComponent } from './components/design/user-notification/user-notification.component';
 import { MovieBannerComponent } from './components/design/movie-banner/movie-banner.component';
 import { DataChipComponent } from './components/design/data-chip/data-chip.component';
+import { MovieCardComponent } from './components/design/movie-card/movie-card.component';
+import { MoviesListComponent } from './components/movies-list/movies-list.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,8 @@ import { DataChipComponent } from './components/design/data-chip/data-chip.compo
     UserNotificationComponent,
     MovieBannerComponent,
     DataChipComponent,
+    MovieCardComponent,
+    MoviesListComponent,
   ],
   imports: [
     BrowserModule,
