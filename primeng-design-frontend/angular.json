@@ -33,9 +33,19 @@
             "styles": [
               "src/styles.scss",
               "node_modules/primeicons/primeicons.css",
-              "node_modules/primeng/resources/themes/saga-blue/theme.css",
               "node_modules/primeng/resources/primeng.min.css",
-              "node_modules/primeflex/primeflex.css"
+              "node_modules/primeflex/primeflex.css",
+              "src/assets/fonts/NetflixSans.css",
+              {
+                "input": "src/app/themes/theme-saga-blue.scss",
+                "bundleName": "saga-blue",
+                "inject": false
+              },
+              {
+                "input": "src/app/themes/theme-vela-blue.scss",
+                "bundleName": "vela-blue",
+                "inject": false
+              }
             ],
             "scripts": []
           },
@@ -105,9 +115,19 @@
             "styles": [
               "src/styles.scss",
               "node_modules/primeicons/primeicons.css",
-              "node_modules/primeng/resources/themes/saga-blue/theme.css",
               "node_modules/primeng/resources/primeng.min.css",
-              "node_modules/primeflex/primeflex.css"
+              "node_modules/primeflex/primeflex.css",
+              "src/assets/fonts/NetflixSans.css",
+              {
+                "input": "src/app/themes/theme-saga-blue.scss",
+                "bundleName": "saga-blue",
+                "inject": false
+              },
+              {
+                "input": "src/app/themes/theme-vela-blue.scss",
+                "bundleName": "vela-blue",
+                "inject": false
+              }
             ],
             "scripts": []
           }
