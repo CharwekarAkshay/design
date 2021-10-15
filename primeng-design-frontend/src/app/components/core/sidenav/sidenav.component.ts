@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { MenuItem } from 'primeng/api';
+import { Component, ElementRef, OnInit } from '@angular/core';
+import { ConfigurationService } from 'src/app/services/configuration.service';
 import { ThemeService } from 'src/app/services/theme.service';
 
 @Component({
@@ -9,27 +9,33 @@ import { ThemeService } from 'src/app/services/theme.service';
 })
 export class SidenavComponent implements OnInit {
 
-  constructor(private themeService: ThemeService) { }
-
-  items!: MenuItem[];
+  constructor(private themeService: ThemeService, private configurationService: ConfigurationService) { }
   currentTheme = 'saga-blue';
+  sidenavButtonList: Array<any> = [];
 
   ngOnInit(): void {
-    this.items = [
-      { label: 'New', icon: 'pi pi-fw pi-plus' },
-      { label: 'Open', icon: 'pi pi-fw pi-download' },
-      { label: 'Undo', icon: 'pi pi-fw pi-refresh' }
-    ];
+    this.fetchConfiguration();
+  }
+
+  fetchConfiguration(): void {
+    this.configurationService.getConfigurationByName('sidenavConfiguration').subscribe(response => {
+      this.sidenavButtonList = JSON.parse(response.configurationData);
+    });
+  }
+  clickHandler(label: string): void {
+    if (label === 'Settings') {
+      this.changeTheme();
+    }
   }
 
   changeTheme() {
     if (this.currentTheme === 'saga-blue') {
-      this.themeService.swtichTheme('vela-blue');
+      this.themeService.switchTheme('vela-blue');
       this.currentTheme = 'vela-blue';
-    }else {
-      this.themeService.swtichTheme('saga-blue');
+    } else {
+      this.themeService.switchTheme('saga-blue');
       this.currentTheme = 'saga-blue';
-    }  
+    }
   }
 
 
