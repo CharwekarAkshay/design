@@ -1,8 +1,11 @@
-<div class="grid container">
-    <div class="col-1 p-0">
-        <app-sidenav></app-sidenav>
-    </div>
-    <div class="col-11 p-0">
-        <router-outlet></router-outlet>
+<div>
+    <p-progressBar *ngIf="isLoading" mode="indeterminate" [style]="{'height': '5px'}"></p-progressBar>
+    <div class="grid container">
+        <div class="col-1 p-0">
+            <app-sidenav></app-sidenav>
+        </div>
+        <div class="col-11 p-0">
+            <router-outlet></router-outlet>
+        </div>
     </div>
 </div>
