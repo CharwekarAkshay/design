@@ -1,5 +1,5 @@
 export type Movie = {
-    "_id": string,
+    "id": string,
     "plot": string,
     "genres": Array<string>,
     "runtime": number,
@@ -47,4 +47,3 @@ export type Movie = {
       }
     }
   };
-  

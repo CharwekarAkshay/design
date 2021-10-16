@@ -4,15 +4,18 @@
     </ng-template>
     <ng-template let-movie pTemplate="item">
         <div class="flex align-item-center justify-content-between px-2">
-            <div class="flex flex-column align-item-center justify-content-center">
+            <div class="flex flex-column align-item-center justify-content-center px-2">
                 <p class="text-4xl mb-2">
                     {{movie.title}}
                 </p>
                 <p class="text-sm line-height-2 plot mb-2">
                     {{movie.fullplot}}
                 </p>
-                <div>
+                <div class="mb-2">
                     <app-language-list [languages]="movie.languages"></app-language-list>
+                </div>
+                <div class="flex align-item-center justify-content-end">
+                  <button pButton (click)="showMovieDetails(movie.id)">Details</button>
                 </div>
             </div>
             <div>

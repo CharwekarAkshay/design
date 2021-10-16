@@ -6,7 +6,7 @@ import { ChipModule } from 'primeng/chip';
 import { InputSwitchModule } from 'primeng/inputswitch';
 import { MenuModule } from 'primeng/menu';
 import { ProgressBarModule } from 'primeng/progressbar';
-
+import { RippleModule } from 'primeng/ripple';
 @NgModule({
     imports: [
         MenuModule,
@@ -16,6 +16,7 @@ import { ProgressBarModule } from 'primeng/progressbar';
         InputSwitchModule,
         CarouselModule,
         ChipModule,
+        RippleModule,
     ],
     exports: [
         MenuModule,
@@ -25,6 +26,7 @@ import { ProgressBarModule } from 'primeng/progressbar';
         InputSwitchModule,
         CarouselModule,
         ChipModule,
+        RippleModule,
     ]
 })
 export class PrimengModule { }
