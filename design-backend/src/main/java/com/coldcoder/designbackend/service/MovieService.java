@@ -25,9 +25,9 @@ public class MovieService {
         return movieRepository.findAll();
     }
 
-    public Page<Movie> getTopThreeMovie() {
+    public Page<Movie> getTopMovie() {
         Sort sorting = Sort.by(Sort.Direction.DESC, "released").and(Sort.by(Sort.Direction.DESC, "imdb.rating"));
-        PageRequest pageRequest = PageRequest.of(0, 3, sorting);
+        PageRequest pageRequest = PageRequest.of(0, 10, sorting);
         return movieRepository.findAll(pageRequest);
     }
 

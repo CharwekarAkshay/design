@@ -15,7 +15,7 @@ public class MovieController {
 
     @GetMapping(value = "trending")
     public Page<Movie> getMovie() {
-        return movieService.getTopThreeMovie();
+        return movieService.getTopMovie();
     }
 
     @PostMapping
