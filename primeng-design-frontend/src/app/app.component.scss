@@ -15,5 +15,11 @@
     .p-progressbar .p-progressbar-value {
         background: $primary-color;
     }
+    .p-carousel .p-carousel-indicators .p-carousel-indicator.p-highlight button {
+      background: $primary-color;
+    }
+    .p-link:focus {
+      box-shadow: 0 0 0 0.2rem $primary-light-color;
+    }
   }
 }

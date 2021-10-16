@@ -4,7 +4,7 @@ import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { ProgressBarModule } from 'primeng/progressbar';
 import {InputSwitchModule} from 'primeng/inputswitch';
-
+import {CarouselModule} from 'primeng/carousel';
 @NgModule({
     imports: [
         MenuModule,
@@ -12,6 +12,7 @@ import {InputSwitchModule} from 'primeng/inputswitch';
         CardModule,
         ProgressBarModule,
         InputSwitchModule,
+        CarouselModule,
     ],
     exports: [
         MenuModule,
@@ -19,6 +20,7 @@ import {InputSwitchModule} from 'primeng/inputswitch';
         CardModule,
         ProgressBarModule,
         InputSwitchModule,
+        CarouselModule,
     ]
 })
 export class PrimengModule { }

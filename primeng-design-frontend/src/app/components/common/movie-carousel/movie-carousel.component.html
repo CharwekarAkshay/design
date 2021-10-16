@@ -1,0 +1,23 @@
+<p-carousel [value]="movieList" [numVisible]="1" [numScroll]="1" [circular]="true">
+    <ng-template pTemplate="header">
+        <p class="text-5xl">{{ header }}</p>
+    </ng-template>
+    <ng-template let-movie pTemplate="item">
+        <div class="flex align-item-center justify-content-between px-2">
+            <div class="flex flex-column align-item-center justify-content-center">
+                <p class="text-4xl">
+                    {{movie.title}}
+                </p>
+                <p class="text-sm line-height-2 plot">
+                    {{movie.fullplot}}
+                </p>
+            </div>
+            <div>
+                <div class="p-mb-3">
+                    <img class="h-20rem" [src]="movie.poster" [alt]="movie.title" />
+                </div>
+            </div>
+        </div>
+
+    </ng-template>
+</p-carousel>

@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeScreenComponent } from './components/screens/home-screen/home-screen.component';
 import { SettingsScreenComponent } from './components/screens/settings-screen/settings-screen.component';
 import { FormsModule } from '@angular/forms';
+import { MovieCarouselComponent } from './components/common/movie-carousel/movie-carousel.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { FormsModule } from '@angular/forms';
     MainContainerComponent,
     SidenavComponent,
     HomeScreenComponent,
-    SettingsScreenComponent
+    SettingsScreenComponent,
+    MovieCarouselComponent
   ],
   imports: [
     BrowserModule,

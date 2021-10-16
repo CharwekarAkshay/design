@@ -1,6 +1,7 @@
 export class GlobalConstants {
     static backendAPI = "api";
 
-    // Configuration URL
+    // Backend URL
     static configuration = 'configuration';
+    static movie = 'movie';
 }
