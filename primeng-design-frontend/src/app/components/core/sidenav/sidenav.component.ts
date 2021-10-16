@@ -10,8 +10,7 @@ import { ThemeService } from 'src/app/services/theme.service';
 })
 export class SidenavComponent implements OnInit {
 
-  constructor(private themeService: ThemeService, private configurationService: ConfigurationService) { }
-  currentTheme = 'saga-blue';
+  constructor(private configurationService: ConfigurationService) { }
   sidenavButtonList: Array<SidenavButton> = [];
 
   ngOnInit(): void {
@@ -23,16 +22,4 @@ export class SidenavComponent implements OnInit {
       this.sidenavButtonList = JSON.parse(response.configurationData);
     });
   }
-  
-  changeTheme() {
-    if (this.currentTheme === 'saga-blue') {
-      this.themeService.switchTheme('vela-blue');
-      this.currentTheme = 'vela-blue';
-    } else {
-      this.themeService.switchTheme('saga-blue');
-      this.currentTheme = 'saga-blue';
-    }
-  }
-
-
 }

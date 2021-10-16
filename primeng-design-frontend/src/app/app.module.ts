@@ -9,6 +9,7 @@ import { SidenavComponent } from './components/core/sidenav/sidenav.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeScreenComponent } from './components/screens/home-screen/home-screen.component';
 import { SettingsScreenComponent } from './components/screens/settings-screen/settings-screen.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { SettingsScreenComponent } from './components/screens/settings-screen/se
     PrimengModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,19 @@
-<div class="grid">
-    <div class="col-12">
-        
+<div class="grid min-h-screen">
+    <div class="col-12 flex align-items-center justify-content-center">
+        <p-card class="w-6 fadeindown animation-duration-1000">
+            <p class="text-2xl py-3">Settings</p>
+            <div class="grid">
+                <div class="col-12">
+                    <div class="flex align-item-center justify-content-between">
+                        <div>
+                            <p>Dark Theme</p>
+                        </div>
+                        <div>
+                            <p-inputSwitch [(ngModel)]="isDark" (onChange)="changeTheme()"></p-inputSwitch>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </p-card>
     </div>
 </div>
