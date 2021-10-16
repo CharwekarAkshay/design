@@ -7,12 +7,16 @@ import { PrimengModule } from './modules/primeng-module';
 import { MainContainerComponent } from './components/core/main-container/main-container.component';
 import { SidenavComponent } from './components/core/sidenav/sidenav.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HomeScreenComponent } from './components/screens/home-screen/home-screen.component';
+import { SettingsScreenComponent } from './components/screens/settings-screen/settings-screen.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainContainerComponent,
-    SidenavComponent
+    SidenavComponent,
+    HomeScreenComponent,
+    SettingsScreenComponent
   ],
   imports: [
     BrowserModule,

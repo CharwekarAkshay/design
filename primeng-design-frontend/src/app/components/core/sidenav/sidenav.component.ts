@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
+import { SidenavButton } from 'src/app/models/sidenav-button';
 import { ConfigurationService } from 'src/app/services/configuration.service';
 import { ThemeService } from 'src/app/services/theme.service';
 
@@ -11,7 +12,7 @@ export class SidenavComponent implements OnInit {
 
   constructor(private themeService: ThemeService, private configurationService: ConfigurationService) { }
   currentTheme = 'saga-blue';
-  sidenavButtonList: Array<any> = [];
+  sidenavButtonList: Array<SidenavButton> = [];
 
   ngOnInit(): void {
     this.fetchConfiguration();
@@ -22,12 +23,7 @@ export class SidenavComponent implements OnInit {
       this.sidenavButtonList = JSON.parse(response.configurationData);
     });
   }
-  clickHandler(label: string): void {
-    if (label === 'Settings') {
-      this.changeTheme();
-    }
-  }
-
+  
   changeTheme() {
     if (this.currentTheme === 'saga-blue') {
       this.themeService.switchTheme('vela-blue');

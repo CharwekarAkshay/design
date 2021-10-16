@@ -3,7 +3,7 @@
         <ng-container *ngFor="let button of sidenavButtonList">
             <div class="col-12 flex justify-content-center align-items-center">
                 <button pButton pRipple type="button" [icon]="'pi ' + button.icon" class="p-button-rounded"
-                    [id]="button.label" (click)="clickHandler(button.label)"></button>
+                    [id]="button.label" [routerLink]='button.routerLink'></button>
             </div>
         </ng-container>
     </div>
