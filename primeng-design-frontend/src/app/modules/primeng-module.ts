@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
-import { MenuModule } from 'primeng/menu';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
+import { CarouselModule } from 'primeng/carousel';
+import { ChipModule } from 'primeng/chip';
+import { InputSwitchModule } from 'primeng/inputswitch';
+import { MenuModule } from 'primeng/menu';
 import { ProgressBarModule } from 'primeng/progressbar';
-import {InputSwitchModule} from 'primeng/inputswitch';
-import {CarouselModule} from 'primeng/carousel';
+
 @NgModule({
     imports: [
         MenuModule,
@@ -13,6 +15,7 @@ import {CarouselModule} from 'primeng/carousel';
         ProgressBarModule,
         InputSwitchModule,
         CarouselModule,
+        ChipModule,
     ],
     exports: [
         MenuModule,
@@ -21,6 +24,7 @@ import {CarouselModule} from 'primeng/carousel';
         ProgressBarModule,
         InputSwitchModule,
         CarouselModule,
+        ChipModule,
     ]
 })
 export class PrimengModule { }

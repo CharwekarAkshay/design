@@ -11,6 +11,7 @@ import { HomeScreenComponent } from './components/screens/home-screen/home-scree
 import { SettingsScreenComponent } from './components/screens/settings-screen/settings-screen.component';
 import { FormsModule } from '@angular/forms';
 import { MovieCarouselComponent } from './components/common/movie-carousel/movie-carousel.component';
+import { LanguageListComponent } from './components/common/language-list/language-list.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { MovieCarouselComponent } from './components/common/movie-carousel/movie
     SidenavComponent,
     HomeScreenComponent,
     SettingsScreenComponent,
-    MovieCarouselComponent
+    MovieCarouselComponent,
+    LanguageListComponent
   ],
   imports: [
     BrowserModule,

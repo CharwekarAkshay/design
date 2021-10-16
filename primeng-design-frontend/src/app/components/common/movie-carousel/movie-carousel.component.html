@@ -5,12 +5,15 @@
     <ng-template let-movie pTemplate="item">
         <div class="flex align-item-center justify-content-between px-2">
             <div class="flex flex-column align-item-center justify-content-center">
-                <p class="text-4xl">
+                <p class="text-4xl mb-2">
                     {{movie.title}}
                 </p>
-                <p class="text-sm line-height-2 plot">
+                <p class="text-sm line-height-2 plot mb-2">
                     {{movie.fullplot}}
                 </p>
+                <div>
+                    <app-language-list [languages]="movie.languages"></app-language-list>
+                </div>
             </div>
             <div>
                 <div class="p-mb-3">

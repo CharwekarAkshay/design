@@ -1,0 +1,6 @@
+@import "../../../themes/variables";
+
+:host ::ng-deep .p-chip.chip {
+  background: $primary-color;
+  color: var(--primary-color-text);
+}
