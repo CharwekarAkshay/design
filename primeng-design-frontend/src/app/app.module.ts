@@ -13,6 +13,8 @@ import { FormsModule } from '@angular/forms';
 import { MovieCarouselComponent } from './components/common/movie-carousel/movie-carousel.component';
 import { LanguageListComponent } from './components/common/language-list/language-list.component';
 import { MovieDetailsComponent } from './components/screens/movie-details/movie-details.component';
+import { MoviesGridComponent } from './components/common/movies-grid/movies-grid.component';
+import { MovieCardComponent } from './components/common/movie-card/movie-card.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { MovieDetailsComponent } from './components/screens/movie-details/movie-
     SettingsScreenComponent,
     MovieCarouselComponent,
     LanguageListComponent,
-    MovieDetailsComponent
+    MovieDetailsComponent,
+    MoviesGridComponent,
+    MovieCardComponent
   ],
   imports: [
     BrowserModule,
