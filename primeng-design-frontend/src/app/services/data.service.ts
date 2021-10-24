@@ -14,4 +14,12 @@ export class DataService {
   getTrendingMovies(): Observable<Movie> {
     return this.httpClient.get<Movie>(GlobalConstants.backendAPI + '/' + GlobalConstants.movie + '/trending');
   }
+
+  getPouplarMovies(page: number, size: number): Observable<any> {
+    const params = {
+      page,
+      size,
+    };
+    return this.httpClient.get<any>(GlobalConstants.backendAPI + '/' + GlobalConstants.movie + '/popular', { params });
+  }
 }

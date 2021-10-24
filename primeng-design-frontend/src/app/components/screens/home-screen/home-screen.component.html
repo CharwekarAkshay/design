@@ -1,8 +1,8 @@
 <div class="p-3 h-screen overflow-x-hidden overflow-y-auto">
     <div class="fadeinright animation-duration-1000">
-        <app-movie-carousel  [movieList]="movieList" header="Trending Movies"></app-movie-carousel>
+        <app-movie-carousel  [movieList]="movieCaouselList" header="Trending Movies"></app-movie-carousel>
     </div>
     <div>
-      <app-movies-grid></app-movies-grid>
+      <app-movies-grid [movieList]="movieGridList"></app-movies-grid>
     </div>
 </div>

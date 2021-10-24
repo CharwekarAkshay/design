@@ -13,13 +13,15 @@ export class HomeScreenComponent implements OnInit {
 
   constructor(private dataService: DataService, private progressService: ProgressService) { }
 
-  public movieList: Array<Movie> = [];
+  public movieCaouselList: Array<Movie> = [];
+  public movieGridList: Array<Movie> = [];
 
   ngOnInit(): void {
-    this.fetchData();
+    this.fetchCarouselData();
+    this.fetchGridData();
   }
 
-  fetchData(): void {
+  fetchCarouselData(): void {
     this.progressService.showProgressBar();
     this.dataService.getTrendingMovies().pipe(
       pluck("content")
@@ -27,9 +29,25 @@ export class HomeScreenComponent implements OnInit {
       this.progressService.hideProgressBar();
       if (list) {
         console.log(list);
-        this.movieList = list as Array<Movie>;
+        this.movieCaouselList = list as Array<Movie>;
       }
     });
+  }
+
+
+  fetchGridData(): void {
+    this.progressService.showProgressBar();
+    this.dataService.getPouplarMovies(0, 10).subscribe(response => {
+      this.progressService.hideProgressBar();
+      this.setGridResponseData(response);
+    })
+  }
+
+  setGridResponseData(response: any): void {
+    const {content, ...pageable} = response;
+    console.log(content);
+    console.log(pageable);
+    this.movieGridList = content;
   }
 
 }

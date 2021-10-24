@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Movie } from 'src/app/models/movie';
+import { DataService } from 'src/app/services/data.service';
+import { ProgressService } from 'src/app/services/progress.service';
 
 @Component({
   selector: 'app-movies-grid',
@@ -7,12 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MoviesGridComponent implements OnInit {
 
-  numbers!:Array<any>;
+  @Input()
+  movieList: Array<Movie> = [];
 
   constructor() { }
 
   ngOnInit(): void {
-    this.numbers = Array(500).fill(1).map((x,i)=>i);
   }
+
 
 }
