@@ -1,7 +1,7 @@
 import { Pageable } from "./pageable";
 
 export type Page = {
-  pagebale: Pageable,
+  pageable: Pageable,
   "totalPages": number,
   "totalElements": number,
   "last": boolean,

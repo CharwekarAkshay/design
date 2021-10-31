@@ -1,20 +1,21 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PrimengModule } from './modules/primeng-module';
+import { LanguageListComponent } from './components/common/language-list/language-list.component';
+import { MovieCardComponent } from './components/common/movie-card/movie-card.component';
+import { MovieCarouselComponent } from './components/common/movie-carousel/movie-carousel.component';
+import { MoviesGridComponent } from './components/common/movies-grid/movies-grid.component';
 import { MainContainerComponent } from './components/core/main-container/main-container.component';
 import { SidenavComponent } from './components/core/sidenav/sidenav.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeScreenComponent } from './components/screens/home-screen/home-screen.component';
-import { SettingsScreenComponent } from './components/screens/settings-screen/settings-screen.component';
-import { FormsModule } from '@angular/forms';
-import { MovieCarouselComponent } from './components/common/movie-carousel/movie-carousel.component';
-import { LanguageListComponent } from './components/common/language-list/language-list.component';
 import { MovieDetailsComponent } from './components/screens/movie-details/movie-details.component';
-import { MoviesGridComponent } from './components/common/movies-grid/movies-grid.component';
-import { MovieCardComponent } from './components/common/movie-card/movie-card.component';
+import { SettingsScreenComponent } from './components/screens/settings-screen/settings-screen.component';
+import { PrimengModule } from './modules/primeng-module';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { MovieCardComponent } from './components/common/movie-card/movie-card.co
     BrowserAnimationsModule,
     HttpClientModule,
     FormsModule,
+    InfiniteScrollModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

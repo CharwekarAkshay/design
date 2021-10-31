@@ -15,7 +15,7 @@ export class DataService {
     return this.httpClient.get<Movie>(GlobalConstants.backendAPI + '/' + GlobalConstants.movie + '/trending');
   }
 
-  getPouplarMovies(page: number, size: number): Observable<any> {
+  getPopularMovies(page: number, size: number): Observable<any> {
     const params = {
       page,
       size,
