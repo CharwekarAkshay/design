@@ -15,6 +15,9 @@ export class HomeScreenComponent implements OnInit {
   page!: Page;
   showScrollToTopButton: boolean = false;
 
+  infiniteScrollDistance = 2;
+  scrollWindow = false;
+
   constructor(
     private dataService: DataService,
     private progressService: ProgressService,
