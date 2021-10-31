@@ -4,16 +4,19 @@ import { Movie } from 'src/app/models/movie';
 @Component({
   selector: 'app-movie-card',
   templateUrl: './movie-card.component.html',
-  styleUrls: ['./movie-card.component.scss']
+  styleUrls: ['./movie-card.component.scss'],
 })
 export class MovieCardComponent implements OnInit {
-
   @Input()
   movie!: Movie;
 
-  constructor() { }
+  ERROR_MOVIE_IMAGE = 'assets/images/error-image.png';
 
-  ngOnInit(): void {
+  constructor() {}
+
+  ngOnInit(): void {}
+
+  handleImageLoadFailure(event: Event) {
+    (event!.target as HTMLImageElement).src = this.ERROR_MOVIE_IMAGE;
   }
-
 }
