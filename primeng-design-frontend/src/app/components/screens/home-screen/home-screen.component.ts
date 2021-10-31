@@ -15,8 +15,11 @@ export class HomeScreenComponent implements OnInit {
   page!: Page;
   showScrollToTopButton: boolean = false;
 
+  // Scroll Configuration
   infiniteScrollDistance = 2;
   scrollWindow = false;
+
+  fetchingGridData = false;
 
   constructor(
     private dataService: DataService,
@@ -46,20 +49,20 @@ export class HomeScreenComponent implements OnInit {
   }
 
   fetchGridData(): void {
-    this.progressService.showProgressBar();
+    this.fetchingGridData = true;
     if (this.page) {
       const nextPageNumber = this.page.pageable.pageNumber + 1;
       this.dataService
         .getPopularMovies(nextPageNumber, this.DEFAULT_PAGE_SIZE)
         .subscribe((response) => {
-          this.progressService.hideProgressBar();
+          this.fetchingGridData = false;
           this.setGridResponseData(response);
         });
     } else {
       this.dataService
         .getPopularMovies(0, this.DEFAULT_PAGE_SIZE)
         .subscribe((response) => {
-          this.progressService.hideProgressBar();
+          this.fetchingGridData = false;
           this.setGridResponseData(response);
         });
     }

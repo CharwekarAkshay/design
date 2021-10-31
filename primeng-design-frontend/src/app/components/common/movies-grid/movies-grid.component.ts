@@ -1,7 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Movie } from 'src/app/models/movie';
-import { DataService } from 'src/app/services/data.service';
-import { ProgressService } from 'src/app/services/progress.service';
 
 @Component({
   selector: 'app-movies-grid',
@@ -13,10 +11,16 @@ export class MoviesGridComponent implements OnInit {
   @Input()
   movieList: Array<Movie> = [];
 
+  @Input()
+  fetchingMovie: boolean = false;
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  get updatingMovieGrid(): boolean {
+    return this.fetchingMovie;
+  }
 
 }

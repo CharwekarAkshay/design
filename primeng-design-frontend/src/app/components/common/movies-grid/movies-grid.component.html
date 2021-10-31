@@ -1,7 +1,13 @@
-<div class="grid">
-  <ng-container *ngFor="let movie of movieList">
-    <div class="col-12 lg:col-6 md:col-6">
-      <app-movie-card [movie]="movie"></app-movie-card>
-    </div>
-  </ng-container>
+<div class="flex flex-column justify-content-center align-items-center">
+  <div class="grid">
+    <ng-container *ngFor="let movie of movieList">
+      <div class="col-12 lg:col-6 md:col-6">
+        <app-movie-card [movie]="movie"></app-movie-card>
+      </div>
+    </ng-container>
+  </div>
+  <p-progressSpinner
+    [style]="{ width: '50px', height: '50px' }"
+    *ngIf="updatingMovieGrid"
+  ></p-progressSpinner>
 </div>
