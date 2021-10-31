@@ -17,6 +17,7 @@ import { MovieDetailsComponent } from './components/screens/movie-details/movie-
 import { SettingsScreenComponent } from './components/screens/settings-screen/settings-screen.component';
 import { PrimengModule } from './modules/primeng-module';
 import { MovieDetailRatingComponent } from './components/common/movie-detail-rating/movie-detail-rating.component';
+import { ImdbRatingComponent } from './components/common/imdb-rating/imdb-rating.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { MovieDetailRatingComponent } from './components/common/movie-detail-rat
     MovieDetailsComponent,
     MoviesGridComponent,
     MovieCardComponent,
-    MovieDetailRatingComponent
+    MovieDetailRatingComponent,
+    ImdbRatingComponent
   ],
   imports: [
     BrowserModule,
