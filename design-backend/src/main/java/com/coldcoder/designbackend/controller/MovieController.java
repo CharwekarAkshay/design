@@ -28,4 +28,9 @@ public class MovieController {
                                         @RequestParam(value = "size", required = false) Integer size) {
         return movieService.getPopularMovie(page, size);
     }
+
+    @GetMapping("/{movieId}")
+    public Movie getMovieById(@PathVariable String movieId) {
+        return this.movieService.getMovieById(movieId);
+    }
 }

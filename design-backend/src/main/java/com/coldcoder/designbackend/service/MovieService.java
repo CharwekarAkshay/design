@@ -44,4 +44,14 @@ public class MovieService {
         PageRequest pageRequest = PageRequest.of(pageNo, pageSize, sort);
         return movieRepository.findAll(pageRequest);
     }
+
+    public Movie getMovieById(String movieId) {
+        Movie movie;
+        try {
+            movie = movieRepository.findById(movieId).orElseThrow(() -> new Exception(""));
+        } catch (Exception e) {
+            movie = new Movie();
+        }
+        return movie;
+    }
 }
