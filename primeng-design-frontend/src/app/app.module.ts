@@ -16,6 +16,7 @@ import { HomeScreenComponent } from './components/screens/home-screen/home-scree
 import { MovieDetailsComponent } from './components/screens/movie-details/movie-details.component';
 import { SettingsScreenComponent } from './components/screens/settings-screen/settings-screen.component';
 import { PrimengModule } from './modules/primeng-module';
+import { MovieDetailRatingComponent } from './components/common/movie-detail-rating/movie-detail-rating.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { PrimengModule } from './modules/primeng-module';
     LanguageListComponent,
     MovieDetailsComponent,
     MoviesGridComponent,
-    MovieCardComponent
+    MovieCardComponent,
+    MovieDetailRatingComponent
   ],
   imports: [
     BrowserModule,

@@ -8,11 +8,7 @@ export type Movie = {
     "title": string,
     "fullplot": string,
     "languages": Array<string>,
-    "released": {
-      "$date": {
-        "$numberLong": string
-      }
-    },
+    "released": string,
     "directors": Array<string>,
     "rated": string,
     "awards": {
