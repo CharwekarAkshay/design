@@ -1,9 +1,10 @@
 <div class="p-3 h-screen overflow-x-hidden overflow-y-auto" infinite-scroll [infiniteScrollDistance]="2"
-  (scrolled)="scrolled()" [scrollWindow]="false">
+  (scrolled)="scrolled()" [scrollWindow]="false" (scroll) = "onComponentScroll($event)"> 
   <div class="fadeinright animation-duration-1000">
     <app-movie-carousel [movieList]="movieCarouselList" header="Trending Movies"></app-movie-carousel>
   </div>
   <div>
     <app-movies-grid [movieList]="movieGridList"></app-movies-grid>
   </div>
+  <button *ngIf="showScrollToTopButton" pButton pRipple type="button" icon="pi pi-arrow-up" class="p-button-rounded fixed scroll-to-top" (click)="scrollToTop()"></button>
 </div>
