@@ -1,1 +1,19 @@
-https://instagram.fbho1-2.fna.fbcdn.net/v/t51.2885-15/e35/242130717_6440331282651664_8612279144406794510_n.jpg?_nc_ht=instagram.fbho1-2.fna.fbcdn.net&_nc_cat=104&_nc_ohc=1Ic2pXVV5woAX_G5aQ8&edm=AP_V10EBAAAA&ccb=7-4&oh=b2a5391b533d0755e652fcb453be5265&oe=614D84AF&_nc_sid=4f375
+# Design : Movie Review Server
+Application build with angular and spring boot as a technlogy stack.
+For backend we have used Mongo db server
+
+# Application Configuration
+We have to create a keystore so that application used it for authetication of user
+
+Command for generating private key. Ex pass phrase: **desing-backend**
+
+    openssl genrsa -des3 -out private.pem 2048
+
+Extracting public key out of it
+
+    openssl rsa -in private.pem -outform PEM -pubout -out public.pem
+
+https://sockettools.com/kb/creating-certificate-using-openssl/
+
+
+https://stackoverflow.com/questions/4022604/java-how-to-obtain-keystore-file-for-a-certification-crt-file
