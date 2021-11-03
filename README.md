@@ -17,3 +17,7 @@ https://sockettools.com/kb/creating-certificate-using-openssl/
 
 
 https://stackoverflow.com/questions/4022604/java-how-to-obtain-keystore-file-for-a-certification-crt-file
+    
+    C:\Users\ASUS\.jdks\temurin-11.0.12\bin\keytool -import -alias user -file localhost.crt -keypass design-backend -keystore design-backend.jks -storepass design-backend
+
+    C:\Users\ASUS\.jdks\temurin-11.0.12\bin\keytool -import -alias user -file localhost.crt -keypass design-backend -keystore design-backend.jks -storepass design-backend

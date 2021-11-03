@@ -1,6 +1,8 @@
 package com.coldcoder.designbackend.controller;
 
+import com.coldcoder.designbackend.dto.LoginUserRequest;
 import com.coldcoder.designbackend.dto.RegisterUserRequest;
+import com.coldcoder.designbackend.dto.UserAuthenticationResponse;
 import com.coldcoder.designbackend.service.AuthenticationService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -23,5 +25,11 @@ public class AuthenticationController {
     public ResponseEntity<String> verifyAccount(@PathVariable String token) {
         authenticationService.verifyAccount(token);
         return new ResponseEntity<String>("Account Activated Successfully", HttpStatus.ACCEPTED);
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<UserAuthenticationResponse> login(@RequestBody LoginUserRequest loginUserRequest) {
+        UserAuthenticationResponse response = authenticationService.login(loginUserRequest);
+        return new ResponseEntity<UserAuthenticationResponse>(response, HttpStatus.OK);
     }
 }
