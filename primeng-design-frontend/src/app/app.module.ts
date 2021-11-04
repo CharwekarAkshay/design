@@ -18,6 +18,9 @@ import { SettingsScreenComponent } from './components/screens/settings-screen/se
 import { PrimengModule } from './modules/primeng-module';
 import { MovieDetailRatingComponent } from './components/common/movie-detail-rating/movie-detail-rating.component';
 import { ImdbRatingComponent } from './components/common/imdb-rating/imdb-rating.component';
+import { AuthorizationComponent } from './components/screens/authorization/authorization.component';
+import { LoginComponent } from './components/common/login/login.component';
+import { SignupComponent } from './components/common/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,10 @@ import { ImdbRatingComponent } from './components/common/imdb-rating/imdb-rating
     MoviesGridComponent,
     MovieCardComponent,
     MovieDetailRatingComponent,
-    ImdbRatingComponent
+    ImdbRatingComponent,
+    AuthorizationComponent,
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
