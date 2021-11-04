@@ -1,6 +1,7 @@
 package com.coldcoder.designbackend.security;
 
 import lombok.AllArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -34,9 +35,12 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(httpServletRequest));
 
             SecurityContextHolder.getContext().setAuthentication(authentication);
+            filterChain.doFilter(httpServletRequest, httpServletResponse);
+        } else if ( httpServletRequest.getRequestURI().contains("auth") ) {
+            filterChain.doFilter(httpServletRequest, httpServletResponse);
+        } else {
+            httpServletResponse.sendError(HttpServletResponse.SC_UNAUTHORIZED, "REST Signature validation failed");
         }
-
-        filterChain.doFilter(httpServletRequest, httpServletResponse);
     }
 
     private String getJwtFromRequest(HttpServletRequest httpServletRequest) {

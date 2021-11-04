@@ -11,14 +11,10 @@ import java.time.Instant;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Document(value = "verification_tokens")
-public class VerificationToken {
+@Document("refresh_tokens")
+public class RefreshToken {
     @Id
     private String id;
-
     private String token;
-
-    private User user;
-
-    private Instant instant;
+    private Instant createdDate;
 }

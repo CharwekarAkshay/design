@@ -5,19 +5,8 @@ For backend we have used Mongo db server
 # Application Configuration
 We have to create a keystore so that application used it for authetication of user
 
-Command for generating private key. Ex pass phrase: **desing-backend**
+    C:\Users\ASUS\.jdks\temurin-11.0.12\bin\keytool  -genkey -alias designDomain -keyalg RSA -keystore
+    design-backend.jks -keysize 2048
 
-    openssl genrsa -des3 -out private.pem 2048
-
-Extracting public key out of it
-
-    openssl rsa -in private.pem -outform PEM -pubout -out public.pem
-
-https://sockettools.com/kb/creating-certificate-using-openssl/
-
-
-https://stackoverflow.com/questions/4022604/java-how-to-obtain-keystore-file-for-a-certification-crt-file
-    
-    C:\Users\ASUS\.jdks\temurin-11.0.12\bin\keytool -import -alias user -file localhost.crt -keypass design-backend -keystore design-backend.jks -storepass design-backend
-
-    C:\Users\ASUS\.jdks\temurin-11.0.12\bin\keytool -import -alias user -file localhost.crt -keypass design-backend -keystore design-backend.jks -storepass design-backend
+    C:\Users\ASUS\.jdks\temurin-11.0.12\bin\keytool  -certreq -alias designDomain -keystore design-bac
+    kend.jks -file designDomain.csr

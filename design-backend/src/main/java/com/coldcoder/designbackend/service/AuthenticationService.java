@@ -1,6 +1,7 @@
 package com.coldcoder.designbackend.service;
 
 import com.coldcoder.designbackend.dto.LoginUserRequest;
+import com.coldcoder.designbackend.dto.RefreshTokenRequest;
 import com.coldcoder.designbackend.dto.RegisterUserRequest;
 import com.coldcoder.designbackend.dto.UserAuthenticationResponse;
 import com.coldcoder.designbackend.exceptions.ApplicationException;
@@ -31,6 +32,7 @@ public class AuthenticationService {
     private VerificationTokenRepository verificationTokenRepository;
     private AuthenticationManager authenticationManager;
     private JwtProvider jwtProvider;
+    private RefreshTokenService refreshTokenService;
 
     @Transactional
     public void signup(RegisterUserRequest registerUserRequest) {
@@ -82,6 +84,22 @@ public class AuthenticationService {
 
         SecurityContextHolder.getContext().setAuthentication(authentication);
         String token = jwtProvider.generateToken(authentication);
-        return new UserAuthenticationResponse(token, loginUserRequest.getUsername());
+        return UserAuthenticationResponse.builder()
+                .authenticationToken(token)
+                .refreshToken(refreshTokenService.generateRefreshToken().getToken())
+                .expiresAt(Instant.now().plusMillis(jwtProvider.getJwtExpirationInMillis()))
+                .username(loginUserRequest.getUsername())
+                .build();
+    }
+
+    public UserAuthenticationResponse refreshToken(RefreshTokenRequest refreshTokenRequest) {
+        refreshTokenService.validateRefreshToken(refreshTokenRequest.getRefreshToken());
+        String token = jwtProvider.generateTokenWithUserName(refreshTokenRequest.getUsername());
+        return UserAuthenticationResponse.builder()
+                .authenticationToken(token)
+                .refreshToken(refreshTokenRequest.getRefreshToken())
+                .expiresAt(Instant.now().plusMillis(jwtProvider.getJwtExpirationInMillis()))
+                .username(refreshTokenRequest.getUsername())
+                .build();
     }
 }
