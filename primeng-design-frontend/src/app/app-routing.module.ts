@@ -15,7 +15,11 @@ const routes: Routes = [
     path: 'authorization',
     component: AuthorizationComponent,
     children: [
-      { path: 'login', component: LoginComponent },
+      {
+        path: 'login',
+        component: LoginComponent,
+        data: { useSingleContainer: true },
+      },
       { path: 'signup', component: SignupComponent },
       { path: '**', pathMatch: 'full', redirectTo: 'login' },
     ],

@@ -21,6 +21,7 @@ import { ImdbRatingComponent } from './components/common/imdb-rating/imdb-rating
 import { AuthorizationComponent } from './components/screens/authorization/authorization.component';
 import { LoginComponent } from './components/common/login/login.component';
 import { SignupComponent } from './components/common/signup/signup.component';
+import { SingleContainerComponent } from './components/core/single-container/single-container.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { SignupComponent } from './components/common/signup/signup.component';
     ImdbRatingComponent,
     AuthorizationComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    SingleContainerComponent
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,8 @@
 <div class="application">
+  <app-single-container
+    *ngIf="enableSingleContainer; else doubleContainer"
+  ></app-single-container>
+  <ng-template #doubleContainer>
     <app-main-container></app-main-container>
+  </ng-template>
 </div>
