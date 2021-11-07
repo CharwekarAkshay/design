@@ -1,4 +1,22 @@
-<div class="h-screen w-screen" style="background-color: red;">
-
+<div
+  class="
+    h-screen
+    w-screen
+    flex flex-column
+    justify-content-center
+    align-items-center
+  "
+>
+  <p-card class="w-4">
+    <div class="flex align-items-center justify-content-center">
+      <p-selectButton
+        [options]="authorizationOptions"
+        [(ngModel)]="authorizationValue"
+        (onChange)="selectionChange()"
+        optionLabel="label"
+        optionValue="value"
+      ></p-selectButton>
+    </div>
+    <router-outlet></router-outlet>
+  </p-card>
 </div>
-<router-outlet></router-outlet>

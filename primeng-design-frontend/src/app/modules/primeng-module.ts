@@ -4,33 +4,39 @@ import { CardModule } from 'primeng/card';
 import { CarouselModule } from 'primeng/carousel';
 import { ChipModule } from 'primeng/chip';
 import { InputSwitchModule } from 'primeng/inputswitch';
+import { InputTextModule } from 'primeng/inputtext';
 import { MenuModule } from 'primeng/menu';
 import { ProgressBarModule } from 'primeng/progressbar';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { RippleModule } from 'primeng/ripple';
+import { SelectButtonModule } from 'primeng/selectbutton';
 
 @NgModule({
-    imports: [
-        MenuModule,
-        ButtonModule,
-        CardModule,
-        ProgressBarModule,
-        InputSwitchModule,
-        CarouselModule,
-        ChipModule,
-        RippleModule,
-        ProgressSpinnerModule,
-    ],
-    exports: [
-        MenuModule,
-        ButtonModule,
-        CardModule,
-        ProgressBarModule,
-        InputSwitchModule,
-        CarouselModule,
-        ChipModule,
-        RippleModule,
-        ProgressSpinnerModule,
-    ]
+  imports: [
+    MenuModule,
+    ButtonModule,
+    CardModule,
+    ProgressBarModule,
+    InputSwitchModule,
+    CarouselModule,
+    ChipModule,
+    RippleModule,
+    ProgressSpinnerModule,
+    SelectButtonModule,
+    InputTextModule,
+  ],
+  exports: [
+    MenuModule,
+    ButtonModule,
+    CardModule,
+    ProgressBarModule,
+    InputSwitchModule,
+    CarouselModule,
+    ChipModule,
+    RippleModule,
+    ProgressSpinnerModule,
+    SelectButtonModule,
+    InputTextModule,
+  ],
 })
-export class PrimengModule { }
+export class PrimengModule {}

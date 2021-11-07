@@ -1,7 +1,6 @@
-import { Component, ElementRef, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { SidenavButton } from 'src/app/models/sidenav-button';
 import { ConfigurationService } from 'src/app/services/configuration.service';
-import { ThemeService } from 'src/app/services/theme.service';
 
 @Component({
   selector: 'app-sidenav',

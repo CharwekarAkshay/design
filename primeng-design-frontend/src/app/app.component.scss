@@ -31,9 +31,28 @@
       animation: grid-progress-spinner-dash 1.5s ease-in-out infinite,
         grid-progress-spinner-color 6s ease-in-out infinite;
     }
+
+    .p-selectbutton .p-button {
+      background: #ffffff;
+      border: 1px solid #ced4da;
+      color: #495057;
+      transition: background-color 0.2s, color 0.2s, border-color 0.2s,
+        box-shadow 0.2s;
+
+      &:not(.p-disabled):not(.p-highlight):hover {
+        background: #e9ecef;
+        border-color: #ced4da;
+        color: #495057;
+      }
+
+      &.p-highlight {
+        background-color: $primary-color;
+        border-color: $primary-color;
+        color: #ffffff;
+      }
+    }
   }
 }
-
 
 @keyframes grid-progress-spinner-color {
   100%,

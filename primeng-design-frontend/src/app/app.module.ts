@@ -1,6 +1,6 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
@@ -40,7 +40,7 @@ import { SingleContainerComponent } from './components/core/single-container/sin
     AuthorizationComponent,
     LoginComponent,
     SignupComponent,
-    SingleContainerComponent
+    SingleContainerComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,8 +50,9 @@ import { SingleContainerComponent } from './components/core/single-container/sin
     HttpClientModule,
     FormsModule,
     InfiniteScrollModule,
+    ReactiveFormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
