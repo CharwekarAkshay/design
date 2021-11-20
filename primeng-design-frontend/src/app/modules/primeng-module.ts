@@ -10,6 +10,8 @@ import { ProgressBarModule } from 'primeng/progressbar';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { RippleModule } from 'primeng/ripple';
 import { SelectButtonModule } from 'primeng/selectbutton';
+import { MessagesModule } from 'primeng/messages';
+import { MessageModule } from 'primeng/message';
 
 @NgModule({
   imports: [
@@ -24,6 +26,8 @@ import { SelectButtonModule } from 'primeng/selectbutton';
     ProgressSpinnerModule,
     SelectButtonModule,
     InputTextModule,
+    MessageModule,
+    MessagesModule,
   ],
   exports: [
     MenuModule,
@@ -37,6 +41,8 @@ import { SelectButtonModule } from 'primeng/selectbutton';
     ProgressSpinnerModule,
     SelectButtonModule,
     InputTextModule,
+    MessageModule,
+    MessagesModule,
   ],
 })
 export class PrimengModule {}

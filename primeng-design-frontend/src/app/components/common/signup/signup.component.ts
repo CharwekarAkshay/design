@@ -1,5 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {
+  AbstractControl,
+  AsyncValidatorFn,
+  FormBuilder,
+  FormGroup,
+  ValidationErrors,
+  Validators,
+} from '@angular/forms';
+import { Observable } from 'rxjs';
+import { CustomValidators } from 'src/app/helpers/validators';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 
 @Component({
   selector: 'app-signup',
@@ -11,7 +21,10 @@ export class SignupComponent implements OnInit {
   passwordVisible: boolean = false;
   rePasswordVisible: boolean = false;
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(
+    private formBuilder: FormBuilder,
+    private authenticationService: AuthenticationService
+  ) {}
 
   ngOnInit(): void {
     this.generateSingUpForm();
@@ -19,10 +32,22 @@ export class SignupComponent implements OnInit {
 
   generateSingUpForm(): void {
     this.signUpForm = this.formBuilder.group({
-      username: ['', Validators.required],
-      email: ['', Validators.required, Validators.email],
+      username: [
+        '',
+        Validators.required,
+        CustomValidators.usernameAvailabilityValidator(
+          this.authenticationService
+        ),
+      ],
+      email: [
+        '',
+        Validators.required,
+        CustomValidators.emailAvailabilityValidator(
+          this.authenticationService
+        ),
+      ],
       password: ['', Validators.required],
-      rePassword: ['', Validators.required],
+      rePassword: ['', [Validators.required]],
     });
   }
 
@@ -48,5 +73,13 @@ export class SignupComponent implements OnInit {
 
   get rePasswordIcon(): string {
     return this.rePasswordVisible ? 'pi pi-eye' : 'pi pi-eye-slash';
+  }
+
+  submitForm(): void {
+    console.log(this.signUpForm);
+  }
+
+  showControlSeverity(control: AbstractControl): string {
+    return control.invalid ? 'error' : 'success';
   }
 }

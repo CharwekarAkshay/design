@@ -4,4 +4,5 @@ export class GlobalConstants {
     // Backend URL
     static configuration = 'configuration';
     static movie = 'movie';
+    static auth = 'auth';
 }

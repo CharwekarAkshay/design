@@ -1,24 +1,44 @@
 <div class="flex flex-column">
   <p class="text-2xl my-2">SignUp</p>
-  <form [formGroup]="signUpForm">
-    <div class="mb-3 flex flex-column">
+  <form [formGroup]="signUpForm" (ngSubmit)="submitForm()">
+    <div class="mb-3 flex flex-row justify-content-center align-items-center">
       <input
         type="text"
         pInputText
         placeholder="Username"
         formControlName="username"
+        class="mr-2 flex-grow-1"
       />
+      <div class="w-1">
+        <p-message
+          *ngIf="
+            signUpForm.controls['username'].touched ||
+            signUpForm.controls['username'].dirty
+          "
+          severity="{{ showControlSeverity(signUpForm.controls['username']) }}"
+        ></p-message>
+      </div>
     </div>
-    <div class="mb-3 flex flex-column">
+    <div class="mb-3 flex flex-row justify-content-center align-items-center">
       <input
         type="email"
         pInputText
         placeholder="Email"
         formControlName="email"
+        class="mr-2 flex-grow-1"
       />
+      <div class="w-1">
+        <p-message
+          *ngIf="
+            signUpForm.controls['email'].touched ||
+            signUpForm.controls['email'].dirty
+          "
+          severity="{{ showControlSeverity(signUpForm.controls['email']) }}"
+        ></p-message>
+      </div>
     </div>
-    <div class="mb-3 flex flex-column">
-      <div class="p-inputgroup">
+    <div class="mb-3 flex flex-row justify-content-center align-items-center">
+      <div class="p-inputgroup mr-2 flex-grow-1">
         <input
           [type]="passwordFieldType"
           pInputText
@@ -34,9 +54,18 @@
           (click)="togglePasswordVisibility()"
         ></button>
       </div>
+      <div class="w-1">
+        <p-message
+          *ngIf="
+            signUpForm.controls['password'].touched ||
+            signUpForm.controls['password'].dirty
+          "
+          severity="{{ showControlSeverity(signUpForm.controls['password']) }}"
+        ></p-message>
+      </div>
     </div>
-    <div class="mb-3 flex flex-column">
-      <div class="p-inputgroup">
+    <div class="mb-3 flex flex-row justify-content-center align-items-center">
+      <div class="p-inputgroup mr-2 flex-grow-1">
         <input
           [type]="rePasswordFieldType"
           pInputText
@@ -51,6 +80,17 @@
           styleClass="p-button-warn"
           (click)="toggleRePasswordVisibility()"
         ></button>
+      </div>
+      <div class="w-1">
+        <p-message
+          *ngIf="
+            signUpForm.controls['rePassword'].touched ||
+            signUpForm.controls['rePassword'].dirty
+          "
+          severity="{{
+            showControlSeverity(signUpForm.controls['rePassword'])
+          }}"
+        ></p-message>
       </div>
     </div>
     <div class="flex flex-row align-content-center justify-content-end">
