@@ -1,9 +1,6 @@
 package com.coldcoder.designbackend.controller;
 
-import com.coldcoder.designbackend.dto.LoginUserRequest;
-import com.coldcoder.designbackend.dto.RefreshTokenRequest;
-import com.coldcoder.designbackend.dto.RegisterUserRequest;
-import com.coldcoder.designbackend.dto.UserAuthenticationResponse;
+import com.coldcoder.designbackend.dto.*;
 import com.coldcoder.designbackend.service.AuthenticationService;
 import com.coldcoder.designbackend.service.RefreshTokenService;
 import lombok.AllArgsConstructor;
@@ -49,5 +46,17 @@ public class AuthenticationController {
     public ResponseEntity<String> logout(@Valid @RequestBody RefreshTokenRequest refreshTokenRequest) {
         refreshTokenService.deleteRefreshToken(refreshTokenRequest.getRefreshToken());
         return ResponseEntity.status(HttpStatus.OK).body("Refresh token Deleted Successfully !!");
+    }
+
+    @GetMapping("/usernameAvailability/{username}")
+    public ResponseEntity<Availability> checkUsernameExist(@PathVariable String username) {
+        Availability response = this.authenticationService.checkUsernameAvailability(username);
+        return new ResponseEntity<Availability>(response, HttpStatus.OK);
+    }
+
+    @GetMapping("/emailAvailability/{email}")
+    public ResponseEntity<Availability> checkEmailExist(@PathVariable String email) {
+        Availability response = this.authenticationService.checkEmailAvailability(email);
+        return new ResponseEntity<Availability>(response, HttpStatus.OK);
     }
 }

@@ -1,9 +1,6 @@
 package com.coldcoder.designbackend.service;
 
-import com.coldcoder.designbackend.dto.LoginUserRequest;
-import com.coldcoder.designbackend.dto.RefreshTokenRequest;
-import com.coldcoder.designbackend.dto.RegisterUserRequest;
-import com.coldcoder.designbackend.dto.UserAuthenticationResponse;
+import com.coldcoder.designbackend.dto.*;
 import com.coldcoder.designbackend.exceptions.ApplicationException;
 import com.coldcoder.designbackend.models.User;
 import com.coldcoder.designbackend.models.VerificationToken;
@@ -102,4 +99,25 @@ public class AuthenticationService {
                 .username(refreshTokenRequest.getUsername())
                 .build();
     }
+
+    public Availability checkUsernameAvailability(String username) {
+        Availability isUsernameAvailable;
+        User user = this.userRepository.findByUsername(username).orElse(
+                null
+        );
+        isUsernameAvailable = user == null ? new Availability(true): new Availability(false);
+        return isUsernameAvailable;
+    }
+
+
+    public Availability checkEmailAvailability(String email) {
+        Availability isEmailAvailable;
+        User user = this.userRepository.findByEmail(email).orElse(
+                null
+        );
+        isEmailAvailable = user == null ? new Availability(true): new Availability(false);
+        return isEmailAvailable;
+    }
+
+
 }
