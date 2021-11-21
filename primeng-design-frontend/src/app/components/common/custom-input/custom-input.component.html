@@ -1,0 +1,45 @@
+<ng-container [ngSwitch]="inputType">
+  <ng-container *ngSwitchCase="'text'">
+    <div class="mb-3 flex flex-row justify-content-center align-items-center">
+      <input
+        type="text"
+        pInputText
+        placeholder="{{ controlName | titlecase }}"
+        [formControlName]="controlName"
+        class="mr-2 flex-grow-1"
+      />
+      <div class="w-1">
+        <p-message
+          *ngIf="control.touched || control.dirty"
+          severity="{{ showControlSeverity() }}"
+        ></p-message>
+      </div>
+    </div>
+  </ng-container>
+  <ng-container *ngSwitchCase="'password'">
+    <div class="mb-3 flex flex-row justify-content-center align-items-center">
+      <div class="p-inputgroup mr-2 flex-grow-1">
+        <input
+          [type]="passwordFieldType"
+          pInputText
+          placeholder="{{ controlName | titlecase }}"
+          [formControlName]="controlName"
+        />
+        <button
+          type="button"
+          pButton
+          pRipple
+          [icon]="passwordIcon"
+          styleClass="p-button-warn"
+          (click)="togglePasswordVisibility()"
+        ></button>
+      </div>
+      <div class="w-1">
+        <p-message
+          *ngIf="control.touched || control.dirty"
+          severity="{{ showControlSeverity() }}"
+        ></p-message>
+      </div>
+    </div>
+  </ng-container>
+</ng-container>

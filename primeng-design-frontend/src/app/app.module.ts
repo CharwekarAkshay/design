@@ -22,6 +22,7 @@ import { AuthorizationComponent } from './components/screens/authorization/autho
 import { LoginComponent } from './components/common/login/login.component';
 import { SignupComponent } from './components/common/signup/signup.component';
 import { SingleContainerComponent } from './components/core/single-container/single-container.component';
+import { CustomInputComponent } from './components/common/custom-input/custom-input.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { SingleContainerComponent } from './components/core/single-container/sin
     LoginComponent,
     SignupComponent,
     SingleContainerComponent,
+    CustomInputComponent,
   ],
   imports: [
     BrowserModule,

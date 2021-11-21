@@ -18,7 +18,7 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 })
 export class SignupComponent implements OnInit {
   signUpForm!: FormGroup;
-  passwordVisible: boolean = false;
+
   rePasswordVisible: boolean = false;
 
   constructor(
@@ -51,35 +51,7 @@ export class SignupComponent implements OnInit {
     });
   }
 
-  togglePasswordVisibility(): void {
-    this.passwordVisible = !this.passwordVisible;
-  }
-
-  toggleRePasswordVisibility(): void {
-    this.rePasswordVisible = !this.rePasswordVisible;
-  }
-
-  get passwordFieldType(): string {
-    return this.passwordVisible ? 'text' : 'password';
-  }
-
-  get passwordIcon(): string {
-    return this.passwordVisible ? 'pi pi-eye' : 'pi pi-eye-slash';
-  }
-
-  get rePasswordFieldType(): string {
-    return this.rePasswordVisible ? 'text' : 'password';
-  }
-
-  get rePasswordIcon(): string {
-    return this.rePasswordVisible ? 'pi pi-eye' : 'pi pi-eye-slash';
-  }
-
   submitForm(): void {
     console.log(this.signUpForm);
-  }
-
-  showControlSeverity(control: AbstractControl): string {
-    return control.invalid ? 'error' : 'success';
   }
 }

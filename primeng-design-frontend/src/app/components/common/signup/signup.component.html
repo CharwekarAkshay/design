@@ -1,98 +1,24 @@
 <div class="flex flex-column">
   <p class="text-2xl my-2">SignUp</p>
   <form [formGroup]="signUpForm" (ngSubmit)="submitForm()">
-    <div class="mb-3 flex flex-row justify-content-center align-items-center">
-      <input
-        type="text"
-        pInputText
-        placeholder="Username"
-        formControlName="username"
-        class="mr-2 flex-grow-1"
-      />
-      <div class="w-1">
-        <p-message
-          *ngIf="
-            signUpForm.controls['username'].touched ||
-            signUpForm.controls['username'].dirty
-          "
-          severity="{{ showControlSeverity(signUpForm.controls['username']) }}"
-        ></p-message>
-      </div>
-    </div>
-    <div class="mb-3 flex flex-row justify-content-center align-items-center">
-      <input
-        type="email"
-        pInputText
-        placeholder="Email"
-        formControlName="email"
-        class="mr-2 flex-grow-1"
-      />
-      <div class="w-1">
-        <p-message
-          *ngIf="
-            signUpForm.controls['email'].touched ||
-            signUpForm.controls['email'].dirty
-          "
-          severity="{{ showControlSeverity(signUpForm.controls['email']) }}"
-        ></p-message>
-      </div>
-    </div>
-    <div class="mb-3 flex flex-row justify-content-center align-items-center">
-      <div class="p-inputgroup mr-2 flex-grow-1">
-        <input
-          [type]="passwordFieldType"
-          pInputText
-          placeholder="Password"
-          formControlName="password"
-        />
-        <button
-          type="button"
-          pButton
-          pRipple
-          [icon]="passwordIcon"
-          styleClass="p-button-warn"
-          (click)="togglePasswordVisibility()"
-        ></button>
-      </div>
-      <div class="w-1">
-        <p-message
-          *ngIf="
-            signUpForm.controls['password'].touched ||
-            signUpForm.controls['password'].dirty
-          "
-          severity="{{ showControlSeverity(signUpForm.controls['password']) }}"
-        ></p-message>
-      </div>
-    </div>
-    <div class="mb-3 flex flex-row justify-content-center align-items-center">
-      <div class="p-inputgroup mr-2 flex-grow-1">
-        <input
-          [type]="rePasswordFieldType"
-          pInputText
-          placeholder="Re-Password"
-          formControlName="rePassword"
-        />
-        <button
-          type="button"
-          pButton
-          pRipple
-          [icon]="rePasswordIcon"
-          styleClass="p-button-warn"
-          (click)="toggleRePasswordVisibility()"
-        ></button>
-      </div>
-      <div class="w-1">
-        <p-message
-          *ngIf="
-            signUpForm.controls['rePassword'].touched ||
-            signUpForm.controls['rePassword'].dirty
-          "
-          severity="{{
-            showControlSeverity(signUpForm.controls['rePassword'])
-          }}"
-        ></p-message>
-      </div>
-    </div>
+    <app-custom-input
+      [control]="signUpForm.controls['username']"
+      controlName="username"
+    ></app-custom-input>
+    <app-custom-input
+      [control]="signUpForm.controls['email']"
+      controlName="email"
+    ></app-custom-input>
+    <app-custom-input
+      inputType="password"
+      [control]="signUpForm.controls['password']"
+      controlName="password"
+    ></app-custom-input>
+    <app-custom-input
+      inputType="password"
+      [control]="signUpForm.controls['rePassword']"
+      controlName="rePassword"
+    ></app-custom-input>
     <div class="flex flex-row align-content-center justify-content-end">
       <button type="submit" pButton [disabled]="signUpForm.invalid">
         SignUp
