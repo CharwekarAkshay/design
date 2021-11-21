@@ -12,6 +12,7 @@ import { RippleModule } from 'primeng/ripple';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { MessagesModule } from 'primeng/messages';
 import { MessageModule } from 'primeng/message';
+import { TooltipModule } from 'primeng/tooltip';
 
 @NgModule({
   imports: [
@@ -28,6 +29,7 @@ import { MessageModule } from 'primeng/message';
     InputTextModule,
     MessageModule,
     MessagesModule,
+    TooltipModule,
   ],
   exports: [
     MenuModule,
@@ -43,6 +45,7 @@ import { MessageModule } from 'primeng/message';
     InputTextModule,
     MessageModule,
     MessagesModule,
+    TooltipModule,
   ],
 })
 export class PrimengModule {}

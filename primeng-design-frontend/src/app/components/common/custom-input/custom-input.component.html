@@ -10,6 +10,7 @@
       />
       <div class="w-1">
         <p-message
+          [pTooltip]="inputMessage"
           *ngIf="control.touched || control.dirty"
           severity="{{ showControlSeverity() }}"
         ></p-message>
@@ -36,6 +37,7 @@
       </div>
       <div class="w-1">
         <p-message
+          [pTooltip]="inputMessage"
           *ngIf="control.touched || control.dirty"
           severity="{{ showControlSeverity() }}"
         ></p-message>

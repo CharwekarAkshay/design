@@ -2,9 +2,9 @@ import { Component, Input, OnInit } from '@angular/core';
 import {
   AbstractControl,
   ControlContainer,
-  FormControl,
   FormGroupDirective,
 } from '@angular/forms';
+import { ErrorMessage } from 'src/app/helpers/errors';
 
 @Component({
   selector: 'app-custom-input',
@@ -48,4 +48,10 @@ export class CustomInputComponent implements OnInit {
     return this.passwordVisible ? 'pi pi-eye' : 'pi pi-eye-slash';
   }
 
+  get inputMessage(): string {
+    if (this.control.invalid) {
+      return ErrorMessage.getErrorMessage(this.control, this.controlName);
+    }
+    return '';
+  }
 }
