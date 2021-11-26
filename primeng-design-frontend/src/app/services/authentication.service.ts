@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { GlobalConstants } from '../global.constants';
+import { SignupModel } from '../models/signup-model';
 
 @Injectable({
   providedIn: 'root',
@@ -24,6 +25,13 @@ export class AuthenticationService {
         '/' +
         GlobalConstants.auth +
         `/emailAvailability/${email}`
+    );
+  }
+
+  submitSignUpRequest(signup: SignupModel): Observable<any> {
+    return this.httpClient.post(
+      GlobalConstants.backendAPI + '/' + GlobalConstants.auth + '/' + 'signup',
+      signup
     );
   }
 }

@@ -6,6 +6,7 @@ export class ErrorMessage {
     controlName: string
   ): string {
     let finalMessage = '';
+    controlName = this.getTitleCase(controlName);
     if (control.errors !== null) {
       Object.keys(control.errors).forEach((error) => {
         switch (error) {
@@ -20,6 +21,31 @@ export class ErrorMessage {
               `${controlName} is not available`,
               finalMessage
             );
+            break;
+          case 'notValid':
+            finalMessage = this.addMessage(
+              `${controlName} is not valid`,
+              finalMessage
+            );
+            break;
+          case 'notValidLength':
+            finalMessage = this.addMessage(
+              `${controlName} doesn't match accepted length`,
+              finalMessage
+            );
+            break;
+          case 'notValidNumber':
+            finalMessage = this.addMessage(
+              `${controlName} should contain at least one number`,
+              finalMessage
+            );
+            break;
+          case 'notValidCase':
+            finalMessage = this.addMessage(
+              `${controlName} should contain at least one upper and one lower case character`,
+              finalMessage
+            );
+            break;
         }
       });
     }
@@ -33,5 +59,10 @@ export class ErrorMessage {
       message += '\n' + message;
       return message;
     }
+  }
+
+  private static getTitleCase(word: string) {
+    const temp = word.replace(/([A-Z])/g, ' $1');
+    return temp.charAt(0).toUpperCase() + temp.slice(1);
   }
 }
