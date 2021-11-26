@@ -19,22 +19,13 @@
   </ng-container>
   <ng-container *ngSwitchCase="'password'">
     <div class="mb-3 flex flex-row justify-content-center align-items-center">
-      <div class="p-inputgroup mr-2 flex-grow-1">
-        <input
-          [type]="passwordFieldType"
-          pInputText
-          placeholder="{{ controlName | titlecase }}"
-          [formControlName]="controlName"
-        />
-        <button
-          type="button"
-          pButton
-          pRipple
-          [icon]="passwordIcon"
-          styleClass="p-button-warn"
-          (click)="togglePasswordVisibility()"
-        ></button>
-      </div>
+      <input
+        type="text"
+        pPassword
+        placeholder="{{ controlName | titlecase }}"
+        [formControlName]="controlName"
+        class="mr-2 flex-grow-1"
+      />
       <div class="w-1">
         <p-message
           [pTooltip]="inputMessage"

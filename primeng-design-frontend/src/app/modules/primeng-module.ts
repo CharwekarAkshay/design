@@ -13,6 +13,7 @@ import { SelectButtonModule } from 'primeng/selectbutton';
 import { MessagesModule } from 'primeng/messages';
 import { MessageModule } from 'primeng/message';
 import { TooltipModule } from 'primeng/tooltip';
+import { PasswordModule } from 'primeng/password';
 
 @NgModule({
   imports: [
@@ -30,6 +31,7 @@ import { TooltipModule } from 'primeng/tooltip';
     MessageModule,
     MessagesModule,
     TooltipModule,
+    PasswordModule,
   ],
   exports: [
     MenuModule,
@@ -46,6 +48,7 @@ import { TooltipModule } from 'primeng/tooltip';
     MessageModule,
     MessagesModule,
     TooltipModule,
+    PasswordModule,
   ],
 })
 export class PrimengModule {}
