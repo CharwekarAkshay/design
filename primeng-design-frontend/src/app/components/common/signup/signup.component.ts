@@ -1,16 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  AbstractControl,
-  AsyncValidatorFn,
-  FormBuilder,
-  FormGroup,
-  ValidationErrors,
-  Validators,
-} from '@angular/forms';
-import { Observable } from 'rxjs';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CustomValidators } from 'src/app/helpers/validators';
 import { SignupModel } from 'src/app/models/signup-model';
+import { ToastMessage } from 'src/app/models/toast-message';
 import { AuthenticationService } from 'src/app/services/authentication.service';
+import { ToastMessageService } from 'src/app/services/toast-message.service';
 
 @Component({
   selector: 'app-signup',
@@ -24,7 +18,8 @@ export class SignupComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private authenticationService: AuthenticationService
+    private authenticationService: AuthenticationService,
+    private toastMessageService: ToastMessageService
   ) {}
 
   ngOnInit(): void {
@@ -70,7 +65,19 @@ export class SignupComponent implements OnInit {
 
       this.authenticationService
         .submitSignUpRequest(signup)
-        .subscribe((response) => console.log(response));
+        .subscribe((response) => {
+          if (response) {
+            const message: ToastMessage = {
+              severity: 'success',
+              summary: 'Success',
+              detail: response.message + '\n' + response.url,
+            };
+
+            this.toastMessageService.showMessage(message);
+          } else {
+            this.toastMessageService.genericErrorMessage();
+          }
+        });
     }
   }
 

@@ -32,7 +32,7 @@ public class AuthenticationService {
     private RefreshTokenService refreshTokenService;
 
     @Transactional
-    public void signup(RegisterUserRequest registerUserRequest) {
+    public RegisterUserResponse signup(RegisterUserRequest registerUserRequest) {
         User user = new User();
 
         user.setUsername(registerUserRequest.getUsername());
@@ -40,11 +40,23 @@ public class AuthenticationService {
         user.setPassword(passwordEncoder.encode(registerUserRequest.getPassword()));
         user.setCreated(Instant.now());
         user.setEnabled(false);
-        userRepository.save(user);
+        user = userRepository.save(user);
 
+        // Todo: Integrate this with JMS service
         String token = generateVerificationToken(user);
+        String verificationUrl = "http://localhost:8080/api/auth/accountVerification/" + token;
         System.out.println(">>>>>>>>>>>>>>>>>> Verification Link >>>>>>>>>>>>>>>>>>");
-        System.out.println("http://localhost:8080/api/auth/accountVerification/" + token);
+        System.out.println(verificationUrl);
+
+        return RegisterUserResponse
+                .builder()
+                .id(user.getId())
+                .username(user.getUsername())
+                .email(user.getEmail())
+                .url(verificationUrl)
+                .message("User has been registered successfully")
+                .build();
+
     }
 
     private String generateVerificationToken(User user) {
@@ -105,7 +117,7 @@ public class AuthenticationService {
         User user = this.userRepository.findByUsername(username).orElse(
                 null
         );
-        isUsernameAvailable = user == null ? new Availability(true): new Availability(false);
+        isUsernameAvailable = user == null ? new Availability(true) : new Availability(false);
         return isUsernameAvailable;
     }
 
@@ -115,7 +127,7 @@ public class AuthenticationService {
         User user = this.userRepository.findByEmail(email).orElse(
                 null
         );
-        isEmailAvailable = user == null ? new Availability(true): new Availability(false);
+        isEmailAvailable = user == null ? new Availability(true) : new Availability(false);
         return isEmailAvailable;
     }
 

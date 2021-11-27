@@ -6,14 +6,15 @@ import { ChipModule } from 'primeng/chip';
 import { InputSwitchModule } from 'primeng/inputswitch';
 import { InputTextModule } from 'primeng/inputtext';
 import { MenuModule } from 'primeng/menu';
+import { MessageModule } from 'primeng/message';
+import { MessagesModule } from 'primeng/messages';
+import { PasswordModule } from 'primeng/password';
 import { ProgressBarModule } from 'primeng/progressbar';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { RippleModule } from 'primeng/ripple';
 import { SelectButtonModule } from 'primeng/selectbutton';
-import { MessagesModule } from 'primeng/messages';
-import { MessageModule } from 'primeng/message';
+import { ToastModule } from 'primeng/toast';
 import { TooltipModule } from 'primeng/tooltip';
-import { PasswordModule } from 'primeng/password';
 
 @NgModule({
   imports: [
@@ -32,6 +33,7 @@ import { PasswordModule } from 'primeng/password';
     MessagesModule,
     TooltipModule,
     PasswordModule,
+    ToastModule,
   ],
   exports: [
     MenuModule,
@@ -49,6 +51,7 @@ import { PasswordModule } from 'primeng/password';
     MessagesModule,
     TooltipModule,
     PasswordModule,
+    ToastModule,
   ],
 })
 export class PrimengModule {}
