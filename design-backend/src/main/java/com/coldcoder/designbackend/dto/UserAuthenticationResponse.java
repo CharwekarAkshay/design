@@ -5,8 +5,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.Instant;
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -14,6 +12,6 @@ import java.time.Instant;
 public class UserAuthenticationResponse {
     private String authenticationToken;
     private String refreshToken;
-    private Instant expiresAt;
+    private Long expiresIn;
     private String username;
 }

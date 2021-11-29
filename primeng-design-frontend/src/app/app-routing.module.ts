@@ -6,11 +6,24 @@ import { AuthorizationComponent } from './components/screens/authorization/autho
 import { HomeScreenComponent } from './components/screens/home-screen/home-screen.component';
 import { MovieDetailsComponent } from './components/screens/movie-details/movie-details.component';
 import { SettingsScreenComponent } from './components/screens/settings-screen/settings-screen.component';
+import { CanActivateGuard } from './guards/can-activate.guard';
 
 const routes: Routes = [
-  { path: 'home', component: HomeScreenComponent },
-  { path: 'settings', component: SettingsScreenComponent },
-  { path: 'movie-detail/:movieId', component: MovieDetailsComponent },
+  {
+    path: 'home',
+    component: HomeScreenComponent,
+    canActivate: [CanActivateGuard],
+  },
+  {
+    path: 'settings',
+    component: SettingsScreenComponent,
+    canActivate: [CanActivateGuard],
+  },
+  {
+    path: 'movie-detail/:movieId',
+    component: MovieDetailsComponent,
+    canActivate: [CanActivateGuard],
+  },
   {
     path: 'authorization',
     component: AuthorizationComponent,

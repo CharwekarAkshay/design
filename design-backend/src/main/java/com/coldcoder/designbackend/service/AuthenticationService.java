@@ -87,19 +87,26 @@ public class AuthenticationService {
     }
 
     public UserAuthenticationResponse login(LoginUserRequest loginUserRequest) {
-        UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = new UsernamePasswordAuthenticationToken(
-                loginUserRequest.getUsername(), loginUserRequest.getPassword());
-        Authentication authentication = authenticationManager.authenticate(usernamePasswordAuthenticationToken);
+        // Check  if username exist or not
+        if (this.userRepository.existsByUsername(loginUserRequest.getUsername())) {
 
-        SecurityContextHolder.getContext().setAuthentication(authentication);
-        String token = jwtProvider.generateToken(authentication);
-        return UserAuthenticationResponse.builder()
-                .authenticationToken(token)
-                .refreshToken(refreshTokenService.generateRefreshToken().getToken())
-                .expiresAt(Instant.now().plusMillis(jwtProvider.getJwtExpirationInMillis()))
-                .username(loginUserRequest.getUsername())
-                .build();
+            UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = new UsernamePasswordAuthenticationToken(
+                    loginUserRequest.getUsername(), loginUserRequest.getPassword());
+            Authentication authentication = authenticationManager.authenticate(usernamePasswordAuthenticationToken);
+
+            SecurityContextHolder.getContext().setAuthentication(authentication);
+            String token = jwtProvider.generateToken(authentication);
+            return UserAuthenticationResponse.builder()
+                    .authenticationToken(token)
+                    .refreshToken(refreshTokenService.generateRefreshToken().getToken())
+                    .expiresIn(Instant.now().plusMillis(jwtProvider.getJwtExpirationInMillis()).toEpochMilli())
+                    .username(loginUserRequest.getUsername())
+                    .build();
+        } else {
+            throw new ApplicationException("Invalid Username");
+        }
     }
+
 
     public UserAuthenticationResponse refreshToken(RefreshTokenRequest refreshTokenRequest) {
         refreshTokenService.validateRefreshToken(refreshTokenRequest.getRefreshToken());
@@ -107,7 +114,7 @@ public class AuthenticationService {
         return UserAuthenticationResponse.builder()
                 .authenticationToken(token)
                 .refreshToken(refreshTokenRequest.getRefreshToken())
-                .expiresAt(Instant.now().plusMillis(jwtProvider.getJwtExpirationInMillis()))
+                .expiresIn(Instant.now().plusMillis(jwtProvider.getJwtExpirationInMillis()).toEpochMilli())
                 .username(refreshTokenRequest.getUsername())
                 .build();
     }

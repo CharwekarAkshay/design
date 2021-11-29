@@ -59,4 +59,6 @@ public class AuthenticationController {
         Availability response = this.authenticationService.checkEmailAvailability(email);
         return new ResponseEntity<Availability>(response, HttpStatus.OK);
     }
+
+    //https://dzone.com/articles/global-exception-handling-using-spring-restcontrol
 }

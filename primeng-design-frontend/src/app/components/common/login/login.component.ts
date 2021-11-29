@@ -6,6 +6,8 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { LoginModel } from 'src/app/models/login-model';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +18,10 @@ export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
   passwordVisible: boolean = false;
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(
+    private formBuilder: FormBuilder,
+    private authenticationService: AuthenticationService
+  ) {}
 
   ngOnInit(): void {
     this.generateLoginForm();
@@ -43,5 +48,17 @@ export class LoginComponent implements OnInit {
 
   get passwordIcon(): string {
     return this.passwordVisible ? 'pi pi-eye' : 'pi pi-eye-slash';
+  }
+
+  submitForm(): void {
+    if (this.loginForm.valid) {
+      const login: LoginModel = {
+        ...this.loginForm.value,
+      };
+
+      this.authenticationService.loginRequest(login).subscribe((response) => {
+        console.log(response);
+      });
+    }
   }
 }
