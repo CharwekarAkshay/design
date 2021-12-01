@@ -2,6 +2,7 @@ package com.coldcoder.designbackend.service;
 
 import com.coldcoder.designbackend.dto.*;
 import com.coldcoder.designbackend.exceptions.ApplicationException;
+import com.coldcoder.designbackend.exceptions.NotFoundException;
 import com.coldcoder.designbackend.models.User;
 import com.coldcoder.designbackend.models.VerificationToken;
 import com.coldcoder.designbackend.repositories.UserRepository;
@@ -103,7 +104,7 @@ public class AuthenticationService {
                     .username(loginUserRequest.getUsername())
                     .build();
         } else {
-            throw new ApplicationException("Invalid Username");
+            throw new NotFoundException("NOT_FOUND_ERROR", "Username not found", "username");
         }
     }
 
